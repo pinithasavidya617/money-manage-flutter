@@ -62,7 +62,32 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 height: 100,
               ),
-
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 90),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [Colors.blue, Colors.purple],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter),
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(15),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(15),
+                    onTap: () {},
+                    child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                          child: Center(
+                            child: Text(
+                            "Let's Start",
+                            style: TextStyle(color: Colors.white,fontSize: 25
+                                , fontWeight: FontWeight.bold)),
+                          ),
+                        ),
+                  ),
+                ),
+              )
             ],
             
           )
