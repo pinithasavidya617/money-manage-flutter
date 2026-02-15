@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/homescreen.dart';
+import 'screens/launch_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const LaunchScreen(title: 'Flutter Demo Home Page'),
     );
   }
 }
