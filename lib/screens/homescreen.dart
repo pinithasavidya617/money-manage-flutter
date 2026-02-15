@@ -27,10 +27,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 300,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Color(0xFFEDECF5)
-                    ),
+                        color: Color(0xFFf3eefb)                 ),
                     child: Center(
-                        child: Image.asset('assets/images/wallet.jpeg', width: 200,)
+                        child: Image.asset('assets/images/wallet.png', width: 200,)
                     ),
                   )
                 ],
@@ -42,12 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 padding: EdgeInsets.only(top: 30),
                 child: Text("Save your money",
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.grey,
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Color(0xff565761),
                   fontStyle: FontStyle.normal),),
               ),
               Container(
                 child: Text("with Expense Tracker",
-                  style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold, color: Colors.grey,
+                  style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold, color: Color(0xff565761),
                       fontStyle: FontStyle.normal),),
               ),
               Container(
