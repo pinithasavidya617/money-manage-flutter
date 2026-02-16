@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:money_manage/configs/size_config.dart';
+import 'package:money_manage/screens/home_screen.dart';
 
 class LaunchScreen extends StatefulWidget {
   const LaunchScreen({super.key, required this.title});
@@ -13,13 +15,11 @@ class _LaunchScreenState extends State<LaunchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      ),
       body: Column(
         children: [
           Center(
             child: Container(
-              padding: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: SizeConfig.blockHeight * 10),
               child: Column(
                 children: [
                   Container(
@@ -29,7 +29,7 @@ class _LaunchScreenState extends State<LaunchScreen> {
                         shape: BoxShape.circle,
                         color: Color(0xFFf3eefb)                 ),
                     child: Center(
-                        child: Image.asset('assets/images/wallet.png', width: 200,)
+                        child: Image.asset('assets/images/wallet.png', width: SizeConfig.blockWidth * 50,)
                     ),
                   )
                 ],
@@ -74,7 +74,10 @@ class _LaunchScreenState extends State<LaunchScreen> {
                   borderRadius: BorderRadius.circular(15),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(15),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const HomeScreen()));
+                    },
                     child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                           child: Center(
