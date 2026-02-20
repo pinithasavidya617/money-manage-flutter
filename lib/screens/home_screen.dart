@@ -23,10 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockHeight * 5, vertical: SizeConfig.blockWidth * 3),
+                    padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 15, vertical: SizeConfig.blockHeight * 1.5),
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(25)
                     ),
                     child: Text(
                       "March 2025",
@@ -43,7 +43,95 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Divider(
               thickness: 1,
-            )
+            ),
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 5, vertical: SizeConfig.blockHeight),
+                    padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 5, vertical: SizeConfig.blockHeight * 3),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          colors: [Color(0xFF5C6FE4), Color(0xFFD67EB0)],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                        stops: [0.3, 0.7])
+                    ),
+                    height: SizeConfig.blockHeight * 25,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Total Balance",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: SizeConfig.blockWidth * 5,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            IconButton(onPressed: (){},
+                                icon: Icon(Icons.more_horiz), color: Colors.white,),
+                          ],
+
+                        ),
+                        SizedBox(height: SizeConfig.blockHeight * 0.1,),
+                        Text(
+                          "\$3,550.00",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: SizeConfig.blockWidth * 8,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        Spacer(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Income",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: SizeConfig.blockWidth * 4,
+                                    fontWeight: FontWeight.bold
+                                ),),
+                                Text("\$2,500",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: SizeConfig.blockWidth * 6,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                )
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Expense",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: SizeConfig.blockWidth * 4,
+                                      fontWeight: FontWeight.bold
+                                  ),),
+                                Text("\$950",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: SizeConfig.blockWidth * 6,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                )                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              )
           ],
         ),
       ),
