@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/homescreen.dart';
+import 'package:money_manage/configs/size_config.dart';
+import 'screens/home_screen.dart';
+import 'screens/launch_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Money Management',
+      builder: (context, child){
+        SizeConfig.init(context);
+        return child!;
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const LaunchScreen(title: "title"),
     );
   }
 }
