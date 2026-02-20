@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:money_manage/configs/size_config.dart';
 
+import '../widgets/transaction_items.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -164,6 +166,52 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       )
                     ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 4, vertical: SizeConfig.blockHeight),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                      color: Color(0xFFEBEDF0)
+                    ),
+                    child: Column(
+                      children: [
+                        TransactionItem(
+                          icon: Icons.shopping_cart,
+                          title: "Groceries",
+                          date: "Today",
+                          amount: "-\$120.00",
+                          isExpense: true,
+                        ),
+                        TransactionItem(
+                          icon: Icons.attach_money,
+                          title: "Salary",
+                          date: "Mar 25",
+                          amount: "-\$2000.00",
+                          isExpense: false,
+                        ),
+                        TransactionItem(
+                          icon: Icons.local_taxi,
+                          title: "Uber",
+                          date: "Mar 24",
+                          amount: "-\$35.00",
+                          isExpense: true,
+                        ),
+                        TransactionItem(
+                          icon: Icons.shopping_cart_checkout,
+                          title: "Online Store",
+                          date: "Mar 20",
+                          amount: "-\$150.00",
+                          isExpense: true,
+                        ),
+                        TransactionItem(
+                          icon: Icons.food_bank,
+                          title: "Bank Transfer",
+                          date: "Mar 19",
+                          amount: "-\$100.00",
+                          isExpense: true,
+                        )
+                      ]
+                    ),
                   )
                 ],
               )
