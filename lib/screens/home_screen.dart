@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 15, vertical: SizeConfig.blockHeight * 1.5),
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(25)
                     ),
                     child: Text(
@@ -129,6 +129,41 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ],
                     ),
+                  ),
+                  SizedBox(height: SizeConfig.blockHeight * 2,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 5, vertical: SizeConfig.blockHeight),
+                            child: Text(
+                              "Recent Transactions",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: SizeConfig.blockWidth * 6,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: SizeConfig.blockWidth * 5),
+                            child: TextButton(onPressed: () {},
+                                child: Text("See All",
+                                style: TextStyle(
+                                  fontSize: SizeConfig.blockWidth * 5
+                                ),)),
+                          )
+                        ],
+                      )
+                    ],
                   )
                 ],
               )
