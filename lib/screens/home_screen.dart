@@ -218,6 +218,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){},
+      backgroundColor: Colors.deepPurple,
+        child: Icon(Icons.add, color: Colors.white,),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
