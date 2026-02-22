@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_manage/configs/size_config.dart';
+import 'package:money_manage/screens/launch_screen.dart';
 
 import '../widgets/transaction_items.dart';
 
@@ -95,12 +96,25 @@ class _HomeScreenState extends State<HomeScreen> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Income",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: SizeConfig.blockWidth * 4,
-                                    fontWeight: FontWeight.bold
-                                ),),
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                    radius: 10,
+                                    backgroundColor: Colors.green,
+                                    child: Icon(
+                                      Icons.arrow_downward,
+                                      size: 16,
+                                      color: Colors.white60,
+                                    ),),
+                                    SizedBox(width: SizeConfig.blockWidth * 2,),
+                                    Text("Income",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: SizeConfig.blockWidth * 4,
+                                        fontWeight: FontWeight.bold
+                                    ),),
+                                  ],
+                                ),
                                 Text("\$2,500",
                                   style: TextStyle(
                                       color: Colors.white,
@@ -111,14 +125,27 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                             Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Expense",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: SizeConfig.blockWidth * 4,
-                                      fontWeight: FontWeight.bold
-                                  ),),
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 10,
+                                      backgroundColor: Colors.red,
+                                      child: Icon(
+                                        Icons.arrow_upward,
+                                        size: 16,
+                                        color: Colors.white60,
+                                      ),),
+                                    SizedBox(width: SizeConfig.blockWidth * 2,),
+                                    Text("Expense",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: SizeConfig.blockWidth * 4,
+                                          fontWeight: FontWeight.bold
+                                      ),),
+                                  ],
+                                ),
                                 Text("\$950",
                                   style: TextStyle(
                                       color: Colors.white,
