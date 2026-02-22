@@ -195,12 +195,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   Container(
+                    height: SizeConfig.blockHeight * 40 ,
                     margin: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 4, vertical: SizeConfig.blockHeight),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                       color: Color(0xFFEBEDF0)
                     ),
-                    child: Column(
+                    child: ListView(
                       children: [
                         TransactionItem(
                           icon: Icons.shopping_cart,
@@ -228,6 +229,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: "Online Store",
                           date: "Mar 20",
                           amount: "-\$150.00",
+                          isExpense: true,
+                        ),
+                        TransactionItem(
+                          icon: Icons.food_bank,
+                          title: "Bank Transfer",
+                          date: "Mar 19",
+                          amount: "-\$100.00",
                           isExpense: true,
                         ),
                         TransactionItem(
