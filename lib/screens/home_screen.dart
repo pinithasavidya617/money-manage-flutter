@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:money_manage/configs/size_config.dart';
+import 'package:money_manage/data/model/transaction_model.dart';
 import 'package:money_manage/screens/launch_screen.dart';
+import 'package:money_manage/widgets/transaction_widget.dart';
 
 import '../widgets/transaction_items.dart';
 
@@ -12,6 +14,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  
+  final List<TransactionModel> transactions = [
+    TransactionModel(iconName: 'cart', title: 'Grocery', date: DateTime(2026, 02, 22), amount: 45.33, isExpense: true),
+    TransactionModel(iconName: 'cart', title: 'Salary', date: DateTime(2026, 02, 22), amount: 2000.00, isExpense: false),
+    TransactionModel(iconName: 'cart', title: 'Uber', date: DateTime(2026, 02, 22), amount: 35.00, isExpense: true),
+    TransactionModel(iconName: 'cart', title: 'Online Store', date: DateTime(2026, 02, 22), amount: 150.00, isExpense: true),
+    TransactionModel(iconName: 'cart', title: 'Bank Transfer', date: DateTime(2026, 02, 22), amount: 150.00, isExpense: true)
+
+  ];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -195,58 +207,69 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   Container(
-                    height: SizeConfig.blockHeight * 40 ,
+                    height: SizeConfig.blockHeight * 45 ,
                     margin: EdgeInsets.symmetric(horizontal: SizeConfig.blockWidth * 4, vertical: SizeConfig.blockHeight),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                       color: Color(0xFFEBEDF0)
                     ),
-                    child: ListView(
-                      children: [
-                        TransactionItem(
-                          icon: Icons.shopping_cart,
-                          title: "Groceries",
-                          date: "Today",
-                          amount: "-\$120.00",
-                          isExpense: true,
-                        ),
-                        TransactionItem(
-                          icon: Icons.attach_money,
-                          title: "Salary",
-                          date: "Mar 25",
-                          amount: "-\$2000.00",
-                          isExpense: false,
-                        ),
-                        TransactionItem(
-                          icon: Icons.local_taxi,
-                          title: "Uber",
-                          date: "Mar 24",
-                          amount: "-\$35.00",
-                          isExpense: true,
-                        ),
-                        TransactionItem(
-                          icon: Icons.shopping_cart_checkout,
-                          title: "Online Store",
-                          date: "Mar 20",
-                          amount: "-\$150.00",
-                          isExpense: true,
-                        ),
-                        TransactionItem(
-                          icon: Icons.food_bank,
-                          title: "Bank Transfer",
-                          date: "Mar 19",
-                          amount: "-\$100.00",
-                          isExpense: true,
-                        ),
-                        TransactionItem(
-                          icon: Icons.food_bank,
-                          title: "Bank Transfer",
-                          date: "Mar 19",
-                          amount: "-\$100.00",
-                          isExpense: true,
-                        )
-                      ]
+                    child: Expanded(
+                      child: ListView.separated(
+                        itemCount: transactions.length,
+                        itemBuilder: (context, index){
+                          return TransactionWidget(transaction: transactions[index]);
+                        },
+                        separatorBuilder: (context, index) {
+                          return Divider(thickness: 1.2,);
+                        },
+                      ),
                     ),
+                    // child: ListView(
+                    //   children: [
+                    //     TransactionItem(
+                    //       icon: Icons.shopping_cart,
+                    //       title: "Groceries",
+                    //       date: "Today",
+                    //       amount: "-\$120.00",
+                    //       isExpense: true,
+                    //     ),
+                    //     TransactionItem(
+                    //       icon: Icons.attach_money,
+                    //       title: "Salary",
+                    //       date: "Mar 25",
+                    //       amount: "-\$2000.00",
+                    //       isExpense: false,
+                    //     ),
+                    //     TransactionItem(
+                    //       icon: Icons.local_taxi,
+                    //       title: "Uber",
+                    //       date: "Mar 24",
+                    //       amount: "-\$35.00",
+                    //       isExpense: true,
+                    //     ),
+                    //     TransactionItem(
+                    //       icon: Icons.shopping_cart_checkout,
+                    //       title: "Online Store",
+                    //       date: "Mar 20",
+                    //       amount: "-\$150.00",
+                    //       isExpense: true,
+                    //     ),
+                    //     TransactionItem(
+                    //       icon: Icons.food_bank,
+                    //       title: "Bank Transfer",
+                    //       date: "Mar 19",
+                    //       amount: "-\$100.00",
+                    //       isExpense: true,
+                    //     ),
+                    //     TransactionItem(
+                    //       icon: Icons.food_bank,
+                    //       title: "Bank Transfer",
+                    //       date: "Mar 19",
+                    //       amount: "-\$100.00",
+                    //       isExpense: true,
+                    //     )
+                    //   ]
+                    // ),
                   )
                 ],
               )
